@@ -1,0 +1,282 @@
+/* Neon text effects for the cyberpunk website */
+
+.neon-text {
+    position: relative;
+    color: var(--light-color);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.neon-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--secondary-color);
+    filter: blur(8px);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.neon-text:hover {
+    color: #fff;
+    text-shadow: 
+        0 0 5px var(--secondary-color),
+        0 0 10px var(--secondary-color),
+        0 0 20px var(--secondary-color),
+        0 0 40px var(--secondary-color);
+}
+
+.neon-text:hover::before {
+    opacity: 1;
+}
+
+/* Neon border effects */
+.neon-border {
+    position: relative;
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.neon-border:hover {
+    box-shadow: 
+        0 0 5px var(--secondary-color),
+        0 0 10px var(--secondary-color),
+        0 0 20px var(--secondary-color);
+}
+
+/* Neon button effects */
+.neon-button {
+    position: relative;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    background: transparent;
+    box-shadow: 0 0 5px var(--secondary-color);
+    text-shadow: 0 0 5px var(--secondary-color);
+    transition: all 0.3s ease;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.neon-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-color);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.neon-button:hover {
+    color: var(--dark-color);
+    text-shadow: none;
+    box-shadow: 
+        0 0 5px var(--secondary-color),
+        0 0 10px var(--secondary-color),
+        0 0 20px var(--secondary-color);
+}
+
+.neon-button:hover::before {
+    opacity: 1;
+}
+
+/* Neon highlight effects */
+.neon-highlight {
+    position: relative;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.neon-highlight::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary-color);
+    box-shadow: 
+        0 0 5px var(--secondary-color),
+        0 0 10px var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.neon-highlight:hover::before {
+    height: 100%;
+    opacity: 0.1;
+}
+
+/* Neon pulse animation */
+.neon-pulse {
+    animation: neon-pulse 2s infinite;
+}
+
+@keyframes neon-pulse {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.3);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+/* Neon glow animation */
+.neon-glow {
+    box-shadow: 0 0 5px var(--secondary-color);
+    animation: neon-glow 3s infinite alternate;
+}
+
+@keyframes neon-glow {
+    0% {
+        box-shadow: 
+            0 0 5px var(--secondary-color),
+            0 0 10px var(--secondary-color);
+    }
+    100% {
+        box-shadow: 
+            0 0 10px var(--secondary-color),
+            0 0 20px var(--secondary-color),
+            0 0 30px var(--secondary-color);
+    }
+}
+
+/* Neon text flicker */
+.neon-flicker {
+    animation: neon-flicker 3s infinite alternate;
+}
+
+@keyframes neon-flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 
+            0 0 5px var(--secondary-color),
+            0 0 10px var(--secondary-color),
+            0 0 15px var(--secondary-color);
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+/* Primary color variant */
+.neon-primary {
+    color: var(--primary-color);
+}
+
+.neon-primary::before {
+    color: var(--primary-color);
+}
+
+.neon-primary:hover {
+    text-shadow: 
+        0 0 5px var(--primary-color),
+        0 0 10px var(--primary-color),
+        0 0 20px var(--primary-color),
+        0 0 40px var(--primary-color);
+}
+
+/* Tertiary color variant */
+.neon-tertiary {
+    color: var(--tertiary-color);
+}
+
+.neon-tertiary::before {
+    color: var(--tertiary-color);
+}
+
+.neon-tertiary:hover {
+    text-shadow: 
+        0 0 5px var(--tertiary-color),
+        0 0 10px var(--tertiary-color),
+        0 0 20px var(--tertiary-color),
+        0 0 40px var(--tertiary-color);
+}
+
+/* Accent color variant */
+.neon-accent {
+    color: var(--accent-color);
+}
+
+.neon-accent::before {
+    color: var(--accent-color);
+}
+
+.neon-accent:hover {
+    text-shadow: 
+        0 0 5px var(--accent-color),
+        0 0 10px var(--accent-color),
+        0 0 20px var(--accent-color),
+        0 0 40px var(--accent-color);
+}
+
+/* Success color variant */
+.neon-success {
+    color: var(--success-color);
+}
+
+.neon-success::before {
+    color: var(--success-color);
+}
+
+.neon-success:hover {
+    text-shadow: 
+        0 0 5px var(--success-color),
+        0 0 10px var(--success-color),
+        0 0 20px var(--success-color),
+        0 0 40px var(--success-color);
+}
+
+/* Warning color variant */
+.neon-warning {
+    color: var(--warning-color);
+}
+
+.neon-warning::before {
+    color: var(--warning-color);
+}
+
+.neon-warning:hover {
+    text-shadow: 
+        0 0 5px var(--warning-color),
+        0 0 10px var(--warning-color),
+        0 0 20px var(--warning-color),
+        0 0 40px var(--warning-color);
+}
+
+/* Responsive neon effects */
+@media (max-width: 768px) {
+    .neon-text:hover {
+        text-shadow: 
+            0 0 5px var(--secondary-color),
+            0 0 10px var(--secondary-color);
+    }
+    
+    .neon-button:hover {
+        box-shadow: 
+            0 0 5px var(--secondary-color),
+            0 0 10px var(--secondary-color);
+    }
+    
+    @keyframes neon-glow {
+        0% {
+            box-shadow: 
+                0 0 3px var(--secondary-color),
+                0 0 6px var(--secondary-color);
+        }
+        100% {
+            box-shadow: 
+                0 0 8px var(--secondary-color),
+                0 0 12px var(--secondary-color);
+        }
+    }
+}

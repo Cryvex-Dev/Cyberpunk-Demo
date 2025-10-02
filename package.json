@@ -1,0 +1,32 @@
+{
+  "name": "cyberpunk-demo",
+  "version": "1.0.0",
+  "description": "A cyberpunk-themed website demo by Cryvex Dev",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -o",
+    "dev": "http-server -o -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cryvex-dev/cyberpunk-demo.git"
+  },
+  "keywords": [
+    "cyberpunk",
+    "web-design",
+    "css",
+    "html",
+    "javascript",
+    "demo",
+    "three.js"
+  ],
+  "author": "Cryvex Dev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cryvex-dev/cyberpunk-demo/issues"
+  },
+  "homepage": "https://github.com/cryvex-dev/cyberpunk-demo#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
